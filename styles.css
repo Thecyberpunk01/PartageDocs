@@ -1,0 +1,186 @@
+   body {            font-family: Arial, sans-serif;            line-height: 1.6;            margin: 0;            padding: 0;            background-color: #f4f4f4;        }        header {            background: #35424a;            color: #ffffff;            padding-top: 30px;            min-height: 70px;            border-bottom: #e8491d 3px solid;        }        header a {            color: #ffffff;            text-decoration: none;            text-transform: uppercase;            font-size: 16px;        }        header ul {            padding: 0;            margin: 0;            list-style: none;            overflow: hidden;        }        header li {            float: left;            display: inline;            padding: 0 20px 0 20px;        }        header #branding {            float: left;        }        header #branding h1 {            margin: 0;        }        header nav {            float: right;            margin-top: 10px;        }        .container {            width: 80%;            margin: auto;            overflow: hidden;        }        .intro {            position: relative;            padding: 40px 0;            text-align: center;            background: url('background.jpg') no-repeat center center/cover;            color: #ffffff;        }        .text-animation-container {            position: relative;            z-index: 1;        }        .text-animation {            font-size: 24px;            font-weight: bold;            white-space: nowrap;            overflow: hidden;            display: inline-block;            animation: slide 10s linear infinite;        }        @keyframes slide {            0% { transform: translateX(100%); }            100% { transform: translateX(-100%); }        }        .course-filter {            text-align: center;            margin: 20px 0;        }        .course-filter .btn {            background-color: #35424a;            color: #ffffff;            border: none;            padding: 10px 20px;            margin: 5px;            cursor: pointer;            border-radius: 5px;            transition: background-color 0.3s;        }        .course-filter .btn:hover {            background-color: #e8491d;        }        .course-grid {            display: flex;            flex-wrap: wrap;            gap: 20px;            justify-content: center;        }        .course-card {            background: #ffffff;            border: 1px solid #dddddd;            border-radius: 10px;            padding: 20px;            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);            width: 300px;            text-align: center;            transition: transform 0.3s, box-shadow 0.3s;        }        .course-card:hover {            transform: translateY(-10px);            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);        }        .course-card h4 {            margin: 0 0 10px;        }        .btn {            background-color: #35424a;            color: #ffffff;            border: none;            padding: 10px 15px;            cursor: pointer;            border-radius: 5px;            text-decoration: none;            font-size: 16px;            transition: background-color 0.3s;        }        .btn:hover {            background-color: #e8491d;        }        .modal {            display: none;            position: fixed;            z-index: 1;            left: 0;            top: 0;            width: 100%;            height: 100%;            overflow: auto;            background-color: rgba(0,0,0,0.5);            padding-top: 60px;        }        .modal-content {            background-color: #fefefe;            margin: 5% auto;            padding: 20px;            border: 1px solid #888;            width: 80%;            max-width: 600px;        }        .close {            color: #aaa;            float: right;            font-size: 28px;            font-weight: bold;        }        .close:hover,        .close:focus {            color: black;            text-decoration: none;            cursor: pointer;        }        .upload-section {            margin: 20px 0;        }
+.file-table {    width: 100%;    border-collapse: collapse;    margin: 20px 0;    background-color: #ffffff;    border: 1px solid #dddddd;}.file-table th,.file-table td {    padding: 12px;    text-align: left;    border-bottom: 1px solid #dddddd;}.file-table th {    background-color: #35424a;    color: #ffffff;}.file-table tr:nth-child(even) {    background-color: #f4f4f4;}.file-table a.btn {    display: inline-block;    padding: 5px 10px;    background-color: #35424a;    color: #ffffff;    text-decoration: none;    border-radius: 5px;    transition: background-color 0.3s;}.file-table a.btn:hover {    background-color: #e8491d;}
+}/* Styles pour la section d'introduction */
+.intro {  background-color: #f8f9fa; /* Couleur de fond pour contraste */  padding: 50px 0;  text-align: center;}.text-animation-container {  display: inline-block;  overflow: hidden; /* Cache l'animation sortante */}.text-animation {  font-size: 36px;  font-weight: bold;  color: #333;  animation: slideIn 3s ease-in-out infinite;}@keyframes slideIn {  0% {    transform: translateY(100%);  }  50% {    transform: translateY(0);  }  100% {    transform: translateY(-100%);  }}
+/* Styles pour le conteneur des cartes de cours */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+    margin: 0 auto;
+}
+
+/* Styles pour chaque carte de cours */
+.course-card {
+    background: #ffffff; /* Couleur de fond blanche */
+    border: 1px solid #ddd; /* Bordure légère */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre portée */
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Transition douce pour les effets */
+    text-align: center; /* Centre le texte */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Pour les effets de survol */
+    overflow: hidden; /* Pour les animations internes */
+}
+
+/* Effet de survol pour les cartes de cours */
+.course-card:hover {
+    transform: translateY(-10px) scale(1.03); /* Déplace légèrement la carte vers le haut et l'agrandit */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre portée plus marquée */
+    background-color: #f9f9f9; /* Changement de couleur de fond au survol */
+}
+
+/* Animation de texte entrant */
+.course-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.5s ease;
+    z-index: 0;
+}
+
+/* Animation du texte entrant */
+.course-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Styles pour le titre du cours */
+.course-card h4 {
+    margin: 0 0 10px 0; /* Marge inférieure */
+    font-size: 18px; /* Taille de la police */
+    color: #35424a; /* Couleur du texte */
+    z-index: 1; /* Assure que le texte soit au-dessus de l'animation */
+    position: relative;
+}
+
+/* Styles pour le bouton de chaque carte de cours */
+.course-card .btn {
+    background: #35424a; /* Couleur de fond */
+    color: #ffffff; /* Couleur du texte */
+    border: none; /* Supprime les bordures par défaut */
+    border-radius: 5px; /* Coins arrondis */
+    padding: 10px 20px; /* Espacement interne */
+    font-size: 16px; /* Taille de la police */
+    cursor: pointer; /* Curseur en forme de main */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Effets de transition */
+    position: relative; /* Pour les effets de survol */
+    z-index: 1; /* Assure que le bouton soit au-dessus de l'animation */
+}
+
+/* Effet de survol pour les boutons dans les cartes */
+.course-card .btn:hover {
+    background: #e8491d; /* Couleur de fond au survol */
+    transform: scale(1.05); /* Agrandissement au survol */
+}
+
+/* Effet d'appui pour les boutons dans les cartes */
+.course-card .btn:active {
+    background: #d4381a; /* Couleur de fond lorsque le bouton est enfoncé */
+    transform: scale(0.95); /* Réduction au clic */
+}
+
+
+
+/* Profile Page Styles */
+.profile-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+   ;
+}
+
+.profile-container h2 {
+    color: #35424a;
+    margin-bottom: 1.5rem;
+}
+
+.profile-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #35424a;
+}
+
+.profile-form input[type="text"],
+.profile-form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.profile-form button {
+    background-color: #e8491d;
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.profile-form button:hover {
+    background-color: #35424a;
+}
+
+.success {
+    color: #28a745;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+.profile-picture {
+    max-width: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+#profile_picture {
+    margin-bottom: 10px;
+}
+marquee-rtl {
+    max-width: 30em;                      
+    margin: 1em auto 2em;
+    border: 10px solid #F0F0FF;
+    overflow: hidden;                    
+    box-shadow: 0 .25em .5em #CCC,inset 0 0 1em .25em #CCC;
+  }
+  .marquee-rtl > :first-child {
+    display: inline-block;               
+    padding-right: 2em;                   
+    padding-left: 100%;                 
+    white-space: nowrap;                 
+    animation: defilement-rtl 15s infinite linear;
+  }
+  @keyframes defilement-rtl {
+    0% {
+      transform: translate3d(0,0,0);      
+    }
+    100% {
+      transform: translate3d(-100%,0,0); 
+  }
+}.background-image {  background-image: url('img.jpg'); /* Assurez-vous que le chemin de l'image est correct */  background-size: cover;  background-position: center;  background-repeat: no-repeat;  height: 300px; /* Ajustez la hauteur selon vos besoins */  display: flex;  justify-content: center;  align-items: center;  color: white;  font-size: 50px;  font-weight: bold;  text-align: center;}
